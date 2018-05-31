@@ -130,8 +130,8 @@
 
     }
 
-    #player,
-    #player1 {
+    .player,
+    .player1 {
       border-radius: 50%;
       align-content: left;
     }
@@ -321,16 +321,27 @@
         </i>
         <p id="content4"></p>
       </div>
-      <div class="three">Forum
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-        <br>
-        <p>Lorem ipsum dolor sit amet consectetur.</p>
-        <br>
-        <p>Lorem, ipsum dolor.</p>
-        <br>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur unde explicabo commodi.</p>
-        <br>
-        <p>Lorem ipsum dolor sit amet consectetur.</p>
+      <div class="three">Team Message Board
+          <div class="container">
+            <br>
+            <img id="player" src="" alt="" height="40" width="40" class="player">
+              <p id="title5"></p>
+            </div>
+            
+            <div class="container darker">
+              <img id="player1" src="" alt="" height="40" width="40" class="player1"> 
+              <p id="title7"></p>
+            </div>
+            
+            <div class="container">
+              <img id="player" src="" alt="" height="40" width="40" class="player">
+              <p id="title6"></p>
+            </div>
+            
+            <div class="container darker">
+              <img id="player1" src="" alt="" height="40" width="40" class="player1">
+              <p id="title8"></p>
+            </div>
       </div>
 
       <div class="one">Team Detail
@@ -344,7 +355,7 @@
         <p id="Mascot"></p>
         <p id="stadium"></p>
       </div>
-      <div class="three">Team Forum
+      <!--<div class="three">Team Forum
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
         <br>
         <p>Lorem ipsum dolor sit amet consectetur.</p>
@@ -354,7 +365,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur unde explicabo commodi.</p>
         <br>
         <p>Lorem ipsum dolor sit amet consectetur.</p>
-      </div>
+      </div>-->
 
       <!--<div class="four">Away Games</div>
                 <div class="seven">Home Games
@@ -374,7 +385,7 @@
           <tr>
 
             <td>
-              <img id="player" src="" alt="" height="40" width="40" class "avatar">
+              <img id="player" src="" alt="" height="40" width="40" class="player">
             </td>
             <td id="fan"></td>
             <td>
@@ -384,7 +395,7 @@
           </tr>
           <tr>
             <td>
-              <img id="player1" src="" alt="" height="40" width="40" class "avatar">
+              <img id="player1" src="" alt="" height="40" width="40" class="player1">
             </td>
             <td id="fan1"></td>
             <td>
@@ -501,6 +512,11 @@
             $("#date4").html("Date: " + data[4].Updated);
             $("#content4").html(data[4].Content);
 
+            $("#title5").html("You hear " + data[8].Title);
+            $("#title6").html("Yeah, what about " + data[10].Title);
+            $("#title7").html("Really, man im just glad " + data[9].Title);
+            $("#title8").html("Rumor has it " + data[11].Title);
+
 
           })
           .fail(function () {
@@ -512,7 +528,8 @@
       function getTeam(Key) {
 
         var key = inputChange
-        var data = [{
+        var data = [
+          {
           "Key": "ARI",
           "TeamID": 1,
           "PlayerID": 1,
@@ -2706,9 +2723,10 @@
             console.log(team);
 
             $("#fan").html("Big " + data[6].LastName);
-            $("#player").attr("src", data[6].PhotoUrl);
+            $(".player").attr("src", data[6].PhotoUrl);
             $("#fan1").html("Lil " + data[12].LastName);
-            $("#player1").attr("src", data[12].PhotoUrl);
+            $(".player1").attr("src", data[12].PhotoUrl);
+            
 
           })
           .fail(function () {
